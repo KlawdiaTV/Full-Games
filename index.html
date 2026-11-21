@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KlawdiaTV - Full Games</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background:
+        linear-gradient(
+          rgba(12, 12, 20, 0.90),
+          rgba(12, 12, 20, 0.90)
+        ),
+        url("background.png") center center / cover fixed;
+      color: #f8f4ef;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1500px;
+      margin: 40px auto;
+    }
+
+    h1 {
+      color: #c75cff;
+      margin-bottom: 8px;
+    }
+
+    .intro {
+      color: #f8f4ef;
+      margin-bottom: 30px;
+    }
+
+    .twitch-layout {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 3.2fr)
+        minmax(340px, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+      align-items: stretch;
+    }
+
+    .twitch-section,
+    .twitch-chat {
+      border-radius: 14px;
+      overflow: hidden;
+      background: #0c0c14;
+      border: 1px solid rgba(127, 9, 194, 0.30);
+    }
+
+    .twitch-section {
+      aspect-ratio: 2.2 / 1;
+    }
+
+    .twitch-section iframe,
+    .twitch-chat iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .summary {
+      background: rgba(26, 35, 64, 0.96);
+      border: 1px solid rgba(127, 9, 194, 0.28);
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .controls input,
+    .controls select {
+      background: rgba(26, 35, 64, 0.96);
+      color: #f8f4ef;
+      border: 1px solid rgba(127, 9, 194, 0.35);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+
+    .controls input {
+      min-width: 220px;
+    }
+
+    .controls input::placeholder {
+      color: rgba(248, 244, 239, 0.60);
+    }
+
+    .controls input:focus,
+    .controls select:focus {
+      outline: none;
+      border-color: #7f09c2;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(26, 35, 64, 0.96);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    th {
+      background: rgba(74, 45, 89, 0.98);
+      color: #f8f4ef;
+      text-align: left;
+      padding: 14px;
+    }
+
+    td {
+      padding: 14px;
+      border-top: 1px solid rgba(127, 9, 194, 0.20);
+      color: #f8f4ef;
+    }
+
+    tbody tr {
+      background: rgba(26, 35, 64, 0.96);
+    }
+
+    tbody tr:hover {
+      background: rgba(20, 87, 141, 0.55);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .steam {
+      background: #cdeec5;
+      color: #237125;
+    }
+
+    .loved,
+    .completed {
+      background: #d9f2c8;
+      color: #246b2c;
+    }
+
+    .liked,
+    .in-progress {
+      background: #ffe5a5;
+      color: #7b5800;
+    }
+
+    .skip,
+    .on-hold {
+      background: #f4b7b7;
+      color: #7b1e1e;
+    }
+
+    a {
+      color: #c75cff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 1000px) {
+      .twitch-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .twitch-section {
+        aspect-ratio: 16 / 9;
+      }
+
+      .twitch-chat,
+      .twitch-chat iframe {
+        height: 500px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        width: 95%;
+        margin: 20px auto;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .intro {
+        line-height: 1.5;
+      }
+
+      .controls {
+        flex-direction: column;
+      }
+
+      .controls input,
+      .controls select {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      table {
+        font-size: 14px;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      th,
+      td {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- PAGE TITLE -->
+
+    <h1>Full Games I've Played</h1>
+
+    <p class="intro">
+      A growing collection of full games I've played,
+      my impressions, playthrough progress,
+      and gameplay videos.
+    </p>
+
+
+    <!-- TWITCH PLAYER AND CHAT -->
+
+    <div class="twitch-layout">
+
+      <div class="twitch-section">
+        <iframe
+          src="https://player.twitch.tv/?channel=klawdiatv&amp;parent=klawdiatv.github.io"
+          title="KlawdiaTV Twitch stream"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="twitch-chat">
+        <iframe
+          src="https://www.twitch.tv/embed/klawdiatv/chat?parent=klawdiatv.github.io"
+          title="KlawdiaTV Twitch chat">
+        </iframe>
+      </div>
+
+    </div>
+
+
+    <!-- GAME SUMMARY -->
+
+    <div class="summary" id="summary" aria-live="polite">
+      <strong>Games Listed:</strong>
+      <span id="totalGames">0</span>
+
+      &nbsp; | &nbsp;
+
+      <strong>Completed:</strong>
+      <span id="completedGames">0</span>
+
+      &nbsp; | &nbsp;
+
+      <strong>In Progress:</strong>
+      <span id="ongoingGames">0</span>
+    </div>
+
+
+    <!-- SEARCH AND FILTERS -->
+
+    <div class="controls">
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search games..."
+        aria-label="Search games"
+      >
+
+      <select
+        id="impressionFilter"
+        aria-label="Filter by impression"
+      >
+        <option value="">All Impressions</option>
+        <option value="Really Enjoyed It">Really Enjoyed It</option>
+        <option value="Interesting">Interesting</option>
+        <option value="Loved It">Loved It</option>
+        <option value="Liked It">Liked It</option>
+        <option value="Not For Me">Not For Me</option>
+      </select>
+
+      <select
+        id="statusFilter"
+        aria-label="Filter by playthrough status"
+      >
+        <option value="">All Playthrough Statuses</option>
+        <option value="Completed">Completed</option>
+        <option value="In Progress">In Progress</option>
+        <option value="On Hold">On Hold</option>
+      </select>
+
+    </div>
+
+
+    <!-- FULL GAMES TABLE -->
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Game</th>
+          <th>Platform</th>
+          <th>Date Played</th>
+          <th>Impression</th>
+          <th>Playthrough Status</th>
+          <th>Content</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <!-- GAME 1 -->
+
+        <tr>
+          <td>Resident Evil 2 Remake — Leon</td>
+          <td><span class="badge steam">Steam</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <span class="badge completed">Completed</span>
+          </td>
+          <td>-</td>
+        </tr>
+
+
+        <!-- GAME 2 -->
+
+        <tr>
+          <td>Resident Evil 2 Remake — Claire</td>
+          <td><span class="badge steam">Steam</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <span class="badge completed">Completed</span>
+          </td>
+          <td>-</td>
+        </tr>
+
+
+        <!-- GAME 3 -->
+
+        <tr>
+          <td>The Lightkeeper</td>
+          <td><span class="badge steam">Steam</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <span class="badge completed">Completed</span>
+          </td>
+          <td>-</td>
+        </tr>
+
+
+        <!-- GAME 4 -->
+
+        <tr>
+          <td>ETHEL</td>
+          <td><span class="badge steam">Steam</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <span class="badge completed">Completed</span>
+          </td>
+          <td>-</td>
+        </tr>
+
+
+        <!-- GAME 5 -->
+
+        <tr>
+          <td>Phantom Blade</td>
+          <td><span class="badge steam">Steam</span></td>
+          <td>-</td>
+          <td>
+            <span class="badge loved">Really Enjoyed It</span>
+          </td>
+          <td>
+            <span class="badge in-progress">In Progress</span>
+          </td>
+          <td>-</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- SEARCH, FILTER AND COUNTERS -->
+
+  <script>
+
+    const searchInput =
+      document.getElementById("searchInput");
+
+    const impressionFilter =
+      document.getElementById("impressionFilter");
+
+    const statusFilter =
+      document.getElementById("statusFilter");
+
+    const rows =
+      Array.from(document.querySelectorAll("tbody tr"));
+
+
+    // AUTOMATIC GAME COUNTERS
+
+    document.getElementById("totalGames").textContent =
+      rows.length;
+
+    document.getElementById("completedGames").textContent =
+      rows.filter(row =>
+        row.cells[4].textContent.trim() === "Completed"
+      ).length;
+
+    document.getElementById("ongoingGames").textContent =
+      rows.filter(row =>
+        row.cells[4].textContent.trim() === "In Progress"
+      ).length;
+
+
+    // SEARCH AND FILTER FUNCTION
+
+    function filterTable() {
+
+      const searchValue =
+        searchInput.value.trim().toLowerCase();
+
+      const impressionValue =
+        impressionFilter.value.toLowerCase();
+
+      const statusValue =
+        statusFilter.value.toLowerCase();
+
+
+      rows.forEach(row => {
+
+        const game =
+          row.cells[0].textContent.toLowerCase();
+
+        const impression =
+          row.cells[3].textContent.toLowerCase();
+
+        const status =
+          row.cells[4].textContent.toLowerCase();
+
+
+        const matchesSearch =
+          game.includes(searchValue);
+
+        const matchesImpression =
+          !impressionValue ||
+          impression === impressionValue;
+
+        const matchesStatus =
+          !statusValue ||
+          status === statusValue;
+
+
+        row.style.display =
+          matchesSearch &&
+          matchesImpression &&
+          matchesStatus
+          ? ""
+          : "none";
+
+      });
+
+    }
+
+
+    searchInput.addEventListener(
+      "input",
+      filterTable
+    );
+
+    impressionFilter.addEventListener(
+      "change",
+      filterTable
+    );
+
+    statusFilter.addEventListener(
+      "change",
+      filterTable
+    );
+
+  </script>
+
+</body>
+</html>

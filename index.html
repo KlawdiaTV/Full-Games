@@ -4,18 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KlawdiaTV - Full Games</title>
+
+  <title>THE PARLOR - FULL GAMES</title>
+
+  <!-- Cinematic fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+
       background:
         linear-gradient(
           rgba(12, 12, 20, 0.90),
           rgba(12, 12, 20, 0.90)
         ),
         url("background.png") center center / cover fixed;
+
       color: #f8f4ef;
     }
 
@@ -25,15 +33,31 @@
       margin: 40px auto;
     }
 
+    /* PAGE TITLE */
+
     h1 {
-      color: #c75cff;
-      margin-bottom: 8px;
+      font-family: 'Cinzel', serif;
+      font-size: clamp(34px, 5vw, 68px);
+      font-weight: 400;
+      letter-spacing: 5px;
+      line-height: 1.3;
+      color: #f8f4ef;
+      text-align: center;
+      margin: 15px 0 12px;
     }
 
     .intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 25px;
+      font-weight: 400;
       color: #f8f4ef;
-      margin-bottom: 30px;
+      text-align: center;
+      line-height: 1.5;
+      margin: 0 0 35px;
     }
+
+    /* TWITCH PLAYER AND CHAT */
 
     .twitch-layout {
       display: grid;
@@ -65,6 +89,8 @@
       display: block;
     }
 
+    /* SUMMARY */
+
     .summary {
       background: rgba(26, 35, 64, 0.96);
       border: 1px solid rgba(127, 9, 194, 0.28);
@@ -72,6 +98,8 @@
       padding: 18px;
       margin-bottom: 20px;
     }
+
+    /* SEARCH AND FILTERS */
 
     .controls {
       display: flex;
@@ -104,6 +132,8 @@
       border-color: #7f09c2;
     }
 
+    /* GAME TABLE */
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -132,6 +162,8 @@
     tbody tr:hover {
       background: rgba(20, 87, 141, 0.55);
     }
+
+    /* BADGES */
 
     .badge {
       display: inline-block;
@@ -164,6 +196,8 @@
       color: #7b1e1e;
     }
 
+    /* LINKS */
+
     a {
       color: #c75cff;
       text-decoration: none;
@@ -172,6 +206,8 @@
     a:hover {
       text-decoration: underline;
     }
+
+    /* RESPONSIVE DESIGN */
 
     @media (max-width: 1000px) {
       .twitch-layout {
@@ -195,10 +231,12 @@
       }
 
       h1 {
-        font-size: 26px;
+        font-size: clamp(28px, 7vw, 44px);
+        letter-spacing: 2px;
       }
 
       .intro {
+        font-size: 21px;
         line-height: 1.5;
       }
 
@@ -224,6 +262,17 @@
         padding: 10px;
       }
     }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 28px;
+        letter-spacing: 1px;
+      }
+
+      .intro {
+        font-size: 19px;
+      }
+    }
   </style>
 </head>
 
@@ -233,7 +282,7 @@
 
     <!-- PAGE TITLE -->
 
-    <h1>Full Games I've Played</h1>
+    <h1>THE PARLOR - FULL GAMES</h1>
 
     <p class="intro">
       A growing collection of full games I've played,
@@ -466,10 +515,10 @@
           row.cells[0].textContent.toLowerCase();
 
         const impression =
-          row.cells[3].textContent.toLowerCase();
+          row.cells[3].textContent.trim().toLowerCase();
 
         const status =
-          row.cells[4].textContent.toLowerCase();
+          row.cells[4].textContent.trim().toLowerCase();
 
 
         const matchesSearch =

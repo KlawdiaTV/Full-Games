@@ -7,12 +7,18 @@
 
   <title>THE PARLOR - FULL GAMES</title>
 
-  <!-- Cinematic fonts -->
+  <!-- CINEMATIC FONTS -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 
   <style>
+
+    /* =========================
+       GENERAL PAGE DESIGN
+    ========================= */
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -33,7 +39,10 @@
       margin: 40px auto;
     }
 
-    /* PAGE TITLE */
+
+    /* =========================
+       PAGE TITLE
+    ========================= */
 
     h1 {
       font-family: 'Cinzel', serif;
@@ -57,7 +66,10 @@
       margin: 0 0 35px;
     }
 
-    /* TWITCH PLAYER AND CHAT */
+
+    /* =========================
+       TWITCH PLAYER AND CHAT
+    ========================= */
 
     .twitch-layout {
       display: grid;
@@ -89,7 +101,10 @@
       display: block;
     }
 
-    /* SUMMARY */
+
+    /* =========================
+       GAME SUMMARY
+    ========================= */
 
     .summary {
       background: rgba(26, 35, 64, 0.96);
@@ -99,7 +114,10 @@
       margin-bottom: 20px;
     }
 
-    /* SEARCH AND FILTERS */
+
+    /* =========================
+       SEARCH AND FILTERS
+    ========================= */
 
     .controls {
       display: flex;
@@ -132,7 +150,10 @@
       border-color: #7f09c2;
     }
 
-    /* GAME TABLE */
+
+    /* =========================
+       GAME TABLE
+    ========================= */
 
     table {
       width: 100%;
@@ -163,7 +184,10 @@
       background: rgba(20, 87, 141, 0.55);
     }
 
-    /* BADGES */
+
+    /* =========================
+       BADGES
+    ========================= */
 
     .badge {
       display: inline-block;
@@ -196,7 +220,10 @@
       color: #7b1e1e;
     }
 
-    /* LINKS */
+
+    /* =========================
+       LINKS
+    ========================= */
 
     a {
       color: #c75cff;
@@ -207,9 +234,82 @@
       text-decoration: underline;
     }
 
-    /* RESPONSIVE DESIGN */
+
+    /* =========================
+       GAME REVIEWS SECTION
+    ========================= */
+
+    .reviews-section {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .reviews-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 400;
+      letter-spacing: 3px;
+      line-height: 1.4;
+      color: #f8f4ef;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .reviews-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-style: italic;
+      color: #f8f4ef;
+      text-align: center;
+      margin: 0 0 30px;
+    }
+
+    .review-card {
+      background: rgba(26, 35, 64, 0.96);
+      border: 1px solid rgba(127, 9, 194, 0.30);
+      border-radius: 14px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+
+    .review-card summary {
+      padding: 20px;
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: bold;
+      color: #f8f4ef;
+    }
+
+    .review-card summary:hover {
+      background: rgba(20, 87, 141, 0.35);
+    }
+
+    .review-card[open] summary {
+      border-bottom: 1px solid rgba(127, 9, 194, 0.30);
+      background: rgba(74, 45, 89, 0.35);
+    }
+
+    .review-content {
+      padding: 20px;
+      line-height: 1.8;
+      color: #f8f4ef;
+    }
+
+    .review-content p {
+      margin: 12px 0;
+    }
+
+    .review-content .badge {
+      margin-bottom: 10px;
+    }
+
+
+    /* =========================
+       RESPONSIVE DESIGN
+    ========================= */
 
     @media (max-width: 1000px) {
+
       .twitch-layout {
         grid-template-columns: 1fr;
       }
@@ -225,6 +325,7 @@
     }
 
     @media (max-width: 800px) {
+
       .container {
         width: 95%;
         margin: 20px auto;
@@ -261,9 +362,27 @@
       td {
         padding: 10px;
       }
+
+      .reviews-title {
+        font-size: 28px;
+        letter-spacing: 2px;
+      }
+
+      .reviews-subtitle {
+        font-size: 21px;
+      }
+
+      .review-card summary {
+        padding: 16px;
+      }
+
+      .review-content {
+        padding: 16px;
+      }
     }
 
     @media (max-width: 480px) {
+
       h1 {
         font-size: 28px;
         letter-spacing: 1px;
@@ -272,7 +391,13 @@
       .intro {
         font-size: 19px;
       }
+
+      .reviews-title {
+        font-size: 25px;
+        letter-spacing: 1px;
+      }
     }
+
   </style>
 </head>
 
@@ -280,7 +405,10 @@
 
   <div class="container">
 
-    <!-- PAGE TITLE -->
+
+    <!-- =========================
+         PAGE TITLE
+    ========================= -->
 
     <h1>THE PARLOR - FULL GAMES</h1>
 
@@ -291,7 +419,9 @@
     </p>
 
 
-    <!-- TWITCH PLAYER AND CHAT -->
+    <!-- =========================
+         TWITCH PLAYER AND CHAT
+    ========================= -->
 
     <div class="twitch-layout">
 
@@ -313,9 +443,12 @@
     </div>
 
 
-    <!-- GAME SUMMARY -->
+    <!-- =========================
+         GAME SUMMARY
+    ========================= -->
 
     <div class="summary" id="summary" aria-live="polite">
+
       <strong>Games Listed:</strong>
       <span id="totalGames">0</span>
 
@@ -328,10 +461,13 @@
 
       <strong>In Progress:</strong>
       <span id="ongoingGames">0</span>
+
     </div>
 
 
-    <!-- SEARCH AND FILTERS -->
+    <!-- =========================
+         SEARCH AND FILTERS
+    ========================= -->
 
     <div class="controls">
 
@@ -367,7 +503,9 @@
     </div>
 
 
-    <!-- FULL GAMES TABLE -->
+    <!-- =========================
+         FULL GAMES TABLE
+    ========================= -->
 
     <table>
 
@@ -384,95 +522,254 @@
 
       <tbody>
 
-        <!-- GAME 1 -->
 
-<tr>
-  <td>Resident Evil 2 Remake — Leon</td>
-  <td><span class="badge steam">Steam</span></td>
-  <td>September 2026</td>
-  <td>
-      <span class="badge loved">Really Enjoyed It</span>
-  </td>
-  <td>
-    <span class="badge completed">Completed</span>
-  </td>
-  <td>
-    <a href="https://www.youtube.com/watch?v=GgSDyaMH3EE"
-       target="_blank"
-       rel="noopener noreferrer">
-      VIDEO — PART 1
-    </a>
-  </td>
-</tr>
-
-
-        <!-- GAME 2 -->
-
-<tr>
-  <td>Resident Evil 2 Remake — Claire</td>
-  <td><span class="badge steam">Steam</span></td>
-  <td>October 2026</td>
-  <td>
-          <span class="badge loved">Really Enjoyed It</span>
-  </td>
-  <td>
-    <span class="badge completed">Completed</span>
-  </td>
-  <td>
-    <a href="https://www.youtube.com/watch?v=E24npFD_Y_c"
-       target="_blank"
-       rel="noopener noreferrer">
-      VIDEO — PART 1
-    </a>
-  </td>
-</tr>
-
-
-        <!-- GAME 3 -->
-
-<tr>
-  <td>The Lightkeeper (Live Version)</td>
-  <td><span class="badge steam">Steam</span></td>
-  <td>April 2026</td>
-  <td>
-     <span class="badge liked">Interesting</span>
-  </td>
-  <td>
-    <span class="badge completed">Completed</span>
-  </td>
-  <td>
-    <a href="https://www.youtube.com/live/Aa2xIrWeydA?si=UDEVSdDeMdxeUBCZ"
-       target="_blank"
-       rel="noopener noreferrer">
-      LIVE VOD
-    </a>
-  </td>
-</tr>
-
-
-        <!-- GAME 4 -->
+        <!-- GAME 1: RESIDENT EVIL 2 LEON -->
 
         <tr>
-          <td>ETHEL</td>
-          <td><span class="badge steam">Steam</span></td>
-          <td>November 6, 2026</td>
+          <td>Resident Evil 2 Remake — Leon</td>
+
           <td>
-           <span class="badge skip">Not For Me</span>  
+            <span class="badge steam">Steam</span>
           </td>
+
+          <td>September 2026</td>
+
+          <td>
+            <span class="badge loved">
+              Really Enjoyed It
+            </span>
+          </td>
+
           <td>
             <span class="badge completed">Completed</span>
           </td>
+
+          <td>
+            <a
+              href="https://www.youtube.com/watch?v=GgSDyaMH3EE"
+              target="_blank"
+              rel="noopener noreferrer">
+              VIDEO — PART 1
+            </a>
+          </td>
+        </tr>
+
+
+        <!-- GAME 2: RESIDENT EVIL 2 CLAIRE -->
+
+        <tr>
+          <td>Resident Evil 2 Remake — Claire</td>
+
+          <td>
+            <span class="badge steam">Steam</span>
+          </td>
+
+          <td>October 2026</td>
+
+          <td>
+            <span class="badge loved">
+              Really Enjoyed It
+            </span>
+          </td>
+
+          <td>
+            <span class="badge completed">Completed</span>
+          </td>
+
+          <td>
+            <a
+              href="https://www.youtube.com/watch?v=E24npFD_Y_c"
+              target="_blank"
+              rel="noopener noreferrer">
+              VIDEO — PART 1
+            </a>
+          </td>
+        </tr>
+
+
+        <!-- GAME 3: THE LIGHTKEEPER -->
+
+        <tr>
+          <td>The Lightkeeper (Live Version)</td>
+
+          <td>
+            <span class="badge steam">Steam</span>
+          </td>
+
+          <td>April 2026</td>
+
+          <td>
+            <span class="badge liked">Interesting</span>
+          </td>
+
+          <td>
+            <span class="badge completed">Completed</span>
+          </td>
+
+          <td>
+            <a
+              href="https://www.youtube.com/live/Aa2xIrWeydA?si=UDEVSdDeMdxeUBCZ"
+              target="_blank"
+              rel="noopener noreferrer">
+              LIVE VOD
+            </a>
+          </td>
+        </tr>
+
+
+        <!-- GAME 4: ETHEL -->
+
+        <tr>
+          <td>ETHEL</td>
+
+          <td>
+            <span class="badge steam">Steam</span>
+          </td>
+
+          <td>November 6, 2026</td>
+
+          <td>
+            <span class="badge skip">Not For Me</span>
+          </td>
+
+          <td>
+            <span class="badge completed">Completed</span>
+          </td>
+
           <td>-</td>
         </tr>
+
 
       </tbody>
 
     </table>
 
+
+
+    <!-- =========================
+         THE PARLOR - GAME REVIEWS
+    ========================= -->
+
+    <section class="reviews-section">
+
+      <h2 class="reviews-title">
+        THE PARLOR — GAME REVIEWS
+      </h2>
+
+      <p class="reviews-subtitle">
+        My personal thoughts, experiences &amp; final impressions.
+      </p>
+
+
+      <!-- REVIEW 1: RESIDENT EVIL 2 LEON -->
+
+      <details class="review-card">
+
+        <summary>
+          Resident Evil 2 Remake — Leon
+        </summary>
+
+        <div class="review-content">
+
+          <span class="badge loved">
+            Really Enjoyed It
+          </span>
+
+          <p>
+            My personal review of Leon's playthrough
+            will go here.
+          </p>
+
+        </div>
+
+      </details>
+
+
+
+      <!-- REVIEW 2: RESIDENT EVIL 2 CLAIRE -->
+
+      <details class="review-card">
+
+        <summary>
+          Resident Evil 2 Remake — Claire
+        </summary>
+
+        <div class="review-content">
+
+          <span class="badge loved">
+            Really Enjoyed It
+          </span>
+
+          <p>
+            My personal review of Claire's playthrough
+            will go here.
+          </p>
+
+        </div>
+
+      </details>
+
+
+
+      <!-- REVIEW 3: THE LIGHTKEEPER -->
+
+      <details class="review-card">
+
+        <summary>
+          The Lightkeeper (Live Version)
+        </summary>
+
+        <div class="review-content">
+
+          <span class="badge liked">
+            Interesting
+          </span>
+
+          <p>
+            My personal review of The Lightkeeper
+            will go here.
+          </p>
+
+        </div>
+
+      </details>
+
+
+
+      <!-- REVIEW 4: ETHEL -->
+
+      <details class="review-card">
+
+        <summary>
+          ETHEL
+        </summary>
+
+        <div class="review-content">
+
+          <span class="badge skip">
+            Not For Me
+          </span>
+
+          <p>
+            My personal review of ETHEL
+            will go here.
+          </p>
+
+        </div>
+
+      </details>
+
+
+    </section>
+
+
   </div>
 
 
-  <!-- SEARCH, FILTER AND COUNTERS -->
+
+  <!-- =========================
+       SEARCH, FILTER AND COUNTERS
+  ========================= -->
 
   <script>
 
@@ -503,6 +800,7 @@
       rows.filter(row =>
         row.cells[4].textContent.trim() === "In Progress"
       ).length;
+
 
 
     // SEARCH AND FILTER FUNCTION
